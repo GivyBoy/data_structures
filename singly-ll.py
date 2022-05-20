@@ -29,11 +29,36 @@ class LinkedList:
             last_node = last_node.next
         last_node.next = new_node
 
+    def prepend(self, data):
+        new_node = Node(data)
+
+        new_node.next = self.head
+        self.head = new_node
+
+    def insert_after_node(self, prev_node, data):
+        if not prev_node:
+            print("Previous node does not exist")
+            return
+
+        new_node = Node(data)
+
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
     def print_ll(self):
         cur_node = self.head
         while cur_node:
             print(cur_node.data)
             cur_node = cur_node.next
+
+    def __str__(self):
+        nodes = []
+        cur_node = self.head
+        while cur_node:
+            nodes.append(str(cur_node.data))
+            cur_node = cur_node.next
+
+        return ' -> '.join(nodes)
 
 
 if __name__ == "__main__":
@@ -42,4 +67,8 @@ if __name__ == "__main__":
     ll.append(2)
     ll.append(3)
 
-    ll.print_ll()
+    ll.prepend(7)
+    ll.insert_after_node(ll.head.next, 8)
+
+    print(ll)
+
