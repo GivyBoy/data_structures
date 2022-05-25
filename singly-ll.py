@@ -20,6 +20,7 @@ class LinkedList:
         if self.head is None:
             self.head = new_node
             return
+
         last_node = self.head
         # ^ set to the first element of the LL and will be used to traverse all elements, hence why insertions are O(n)
 
@@ -115,7 +116,7 @@ class LinkedList:
             print(cur_node.data)
             cur_node = cur_node.next
 
-    def __str__(self):
+    def __str__(self) -> str:
         nodes = []
         cur_node = self.head
         while cur_node:

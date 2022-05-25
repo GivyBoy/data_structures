@@ -40,10 +40,10 @@ class Stack:
         if not self.is_empty():
             return self.items[-1]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.items)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self.items)
 
 
@@ -87,7 +87,7 @@ def is_parenthesis_balanced(parenthesis: str) -> bool:
         return False
 
 
-def reverse_string(stack, input_str):
+def reverse_string(stack, input_str) -> str:
 
     for i in range(len(input_str)):
         stack.push(input_str[i])
@@ -99,7 +99,7 @@ def reverse_string(stack, input_str):
     return rev_str
 
 
-def convert_int_to_bin(stack, dec_num):
+def convert_int_to_bin(stack, dec_num) -> int:
     if dec_num == 0:
         return 0
 
@@ -112,7 +112,7 @@ def convert_int_to_bin(stack, dec_num):
     while not stack.is_empty():
         bin_num += str(s.pop())
 
-    return bin_num
+    return int(bin_num)
 
 
 if __name__ == "__main__":
