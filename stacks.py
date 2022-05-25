@@ -111,7 +111,6 @@ def convert_int_to_bin(stack, dec_num) -> int:
     bin_num = ""
     while not stack.is_empty():
         bin_num += str(s.pop())
-
     return int(bin_num)
 
 
