@@ -134,3 +134,5 @@ def buy_and_sell_once(prices: list[int]):
         max_profit = max(max_profit, compare_profit)
     return max_profit
 
+
+
