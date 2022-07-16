@@ -110,6 +110,18 @@ class LinkedList:
             prev.next = cur_node.next
             cur_node = None
 
+    def reverse_iterative(self):
+
+        prev = None
+        cur = self.head
+
+        while cur:
+            nxt = cur.next
+            cur.next = prev
+            prev = cur
+            cur = nxt
+        self.head = prev
+
     def print_ll(self):
         cur_node = self.head
         while cur_node:
