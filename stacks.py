@@ -3,7 +3,7 @@ Stack Implementation
 """
 
 
-class Stack:
+class Stack(object):
 
     def __init__(self):
         self.items = []  # initializes an empty array to store the items
