@@ -131,9 +131,41 @@ class BinaryTree(object):
 
         return traversal
 
+    def height(self, node):
 
+        if node is None:
+            return -1
 
+        left_height = self.height(node.left)
+        right_height = self.height(node.right)
 
+        return 1 + max(left_height, right_height)
+
+    def size_iterative(self):
+
+        if self.root is None:
+            return 0
+
+        stack = Stack()
+        stack.push(self.root)
+        size = 1
+
+        while stack:
+            node = stack.pop()
+
+            if node.left:
+                size += 1
+                stack.push(node.left)
+            if node.right:
+                size += 1
+                stack.push(node.right)
+
+        return size
+
+    def size_recursive(self, node):
+        if node is None:
+            return 0
+        return 1 + self.size_recursive(node.left) + self.size_recursive(node.right)
 
 
 """
@@ -161,7 +193,7 @@ d) do the same as c, but with the right
 # Post-Order
 """
 a) check if cur node is empty/null
-b) traverse the left subtree by recursively calling the in-order method
+b) traverse the left subtree by recursively calling the post-order method
 c) do the same as b, but with the right
 d) display the data part of the root (or cur node)
 """
