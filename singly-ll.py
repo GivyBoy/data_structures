@@ -146,6 +146,30 @@ if __name__ == "__main__":
 
     ll.prepend(7)
     ll.insert_after_node(ll.head.next, 8)
+    print(ll)
+    ll.delete_node(7)
 
     print(ll)
 
+"""
+HackerRank - delete even numbers from a LL
+
+while listHead:
+    if listHead.data % 2 == 0:
+        listHead = listHead.next
+    else:
+        break
+    node = listHead
+    
+while node.next: 
+        
+    if node.next.data % 2 == 0:
+            
+        node.next = node.next.next
+            
+    else: 
+    
+        node = node.next
+    
+return listHead
+"""
